@@ -46,14 +46,14 @@ class Net(nn.Module):
 
         :return: a modified x, having gone through all the layers of the model
         """
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = self.pool(F.relu(self.conv3(x)))
-        x = self.dropout1(self.pool(F.relu(self.conv4(x))))
+        x = self.pool(F.elu(self.conv1(x)))
+        x = self.pool(F.elu(self.conv2(x)))
+        x = self.pool(F.elu(self.conv3(x)))
+        x = self.dropout1(self.pool(F.elu(self.conv4(x))))
 
         # flatten
         x = x.view(x.size(0), -1)
-        x = self.dropout2(F.relu(self.fc1(x)))
+        x = self.dropout2(F.elu(self.fc1(x)))
         x = self.fc2(x)
 
         # a modified x, having gone through all the layers of the model, should be returned
