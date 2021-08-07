@@ -11,5 +11,8 @@
 # Ignore pycache
 __pycache__/
 
-# Ignore saved model files - too big for GitHub without LFS
+# Ignore saved model files
 saved_models/keypoints_model_*.pt
+
+# Temporary local backups
+BAK/
