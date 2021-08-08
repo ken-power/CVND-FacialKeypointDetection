@@ -18,10 +18,10 @@ class Net(nn.Module):
         super(Net, self).__init__()
 
         # 1 input image channel (grayscale), 32 output channels/feature maps, 5x5 square convolution kernel
-        self.conv_layer1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=5)
-        self.conv_layer2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3)
-        self.conv_layer3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3)
-        self.conv_layer4 = nn.Conv2d(in_channels=128, out_channels=256, kernel_size=2)
+        self.conv_layer1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=5, padding='valid')
+        self.conv_layer2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding='valid')
+        self.conv_layer3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, padding='valid')
+        self.conv_layer4 = nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, padding='valid')
 
         self.pooling_layer = nn.MaxPool2d(kernel_size=2, stride=2)
 
