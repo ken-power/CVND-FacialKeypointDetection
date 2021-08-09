@@ -16,3 +16,5 @@ saved_models/keypoints_model_*.pt
 
 # Temporary local backups
 BAK/
+
+Kaggle/
